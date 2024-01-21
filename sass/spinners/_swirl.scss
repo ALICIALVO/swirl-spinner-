@@ -1,0 +1,39 @@
+@import "../constants";
+
+.swirl {
+  width: 45px;
+  height: 45px;
+  background: $swirl-base-color;
+  border-radius: 50%;
+  margin: 20px;
+  position: relative;
+  box-shadow: $spinner-shadow;
+
+  &::after {
+    content: "";
+     width: 4.5rem;
+      height: 4.5rem;
+      position: absolute;
+       border-radius: 50%;
+      top: -0.4rem;
+       left: -0.4rem;
+      border: transparent 0.3rem solid;
+      border-top-color: $swirl-line-color; 
+      border-bottom-color: $swirl-line-color;
+      animation: swirl 1s linear infinite;
+  } 
+}
+@keyframes swirl {
+  0% {
+transform:
+rotate(0deg) scale(1);
+  }
+50%{
+transform:
+ rotate(45deg) scale(1.2);
+}
+
+100% {
+transform: rotate(360deg) scale(1);
+}
+}
